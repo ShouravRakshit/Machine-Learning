@@ -39,7 +39,9 @@ print(regression.intercept_)    # Intercept of the graph
 # going to use the X values to get the predicted Y values. We already know the slope and intercept
 # from X and previous Y value.
 
+# This line will plot the graph on the background.
 plt.plot(X, regression.predict(X), color="green", linewidth=3)
 print(regression.score(X, Y))
+# We need this line to show the graph on the screen.
 plt.show()
 
