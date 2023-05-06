@@ -67,9 +67,10 @@ regression.fit(x, y)
 print(regression.coef_)         # Slope of the graph.
 print(regression.intercept_)    # Intercept of the graph.
 print(regression.score(x, y))
+plt.scatter(x, y, alpha=.5)
 plt.title(label="Tissue concentration of LSD over time", fontdict=title_font)
 plt.xlabel(xlabel="LSD (ppm)", fontdict=x_label_font)
 plt.ylabel(ylabel="Math Score", fontdict=y_label_font)
 plt.text(x=0, y=.3, s="Wagner et al. (1968)")
-plt.plot(x, y, color="red", linewidth=4)
+plt.plot(x, regression.predict(x), color="red", linewidth=4)
 plt.show()
