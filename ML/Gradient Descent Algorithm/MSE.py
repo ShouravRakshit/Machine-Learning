@@ -1,6 +1,7 @@
 import numpy as np
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
+from matplotlib import cm  # color map
 
 
 def mse(y, y_hat):
@@ -22,7 +23,7 @@ print("The intercept of the line is :", regression.intercept_)
 print("The slope of the line is :", regression.coef_)
 
 plt.scatter(x, y, s=70)
-plt.plot(x, predict_value_y, color="orange", linewidth=4)
+# plt.plot(x, predict_value_y, color="orange", linewidth=4)
 plt.xlabel("x values")
 plt.ylabel("y values")
 y_predicted_vals = .84753515 + 1.22272646 * x
@@ -51,6 +52,6 @@ ax.set_xlabel("Theta 0", fontsize=20)
 ax.set_ylabel("Theta 1", fontsize=20)
 ax.set_zlabel("Cost - MSE", fontsize=20)
 
-ax.plot_surface(plot_t0, plot_t1, plot_cost)
+ax.plot_surface(plot_t0, plot_t1, plot_cost, cmap=cm.hot)
 
 plt.show()
