@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="790bf51f-1ccf-4bbe-9259-89a04546ca00" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../.idea/Machine-Learning.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/Machine-Learning.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/top_three_number.py" beforeDir="false" afterPath="$PROJECT_DIR$/top_three_number.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Regression/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Regression/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Multiple Regression/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Multiple Regression/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Multiple Regression/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Multiple Regression/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,14 +33,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Work/Machine-Learning/ML/Regression"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Work/Machine-Learning/ML/Multiple Regression&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python.math_score">
     <configuration name="math_score" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Data Science" />
