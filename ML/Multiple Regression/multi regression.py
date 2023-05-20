@@ -30,17 +30,15 @@ regression = LinearRegression()
 regression.fit(x_train, y_train)
 intercept = regression.intercept_
 coefficient = regression.coef_
-predict = regression.predict(x_train)
 print("This is the intercept for the training dataset", intercept)
 print("This is the slope for the training dataset", coefficient)
-print("R squared value for the training dataset", regression.score(x_train, predict))
+print("R squared value for the training dataset", regression.score(x_train, y_train))
 
 # These codes are for testing dataset.
 regression.fit(x_test, y_test)
 intercept = regression.intercept_
 coefficient = regression.coef_
-predict = regression.predict(x_test)
 print("This is the intercept for the testing dataset", intercept)
 print("This is the slope for the testing dataset", coefficient)
-print("R squared value for the testing dataset", regression.score(x_test, predict))
+print("R squared value for the testing dataset", regression.score(x_test, y_test))
 

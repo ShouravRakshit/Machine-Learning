@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="044174d0-f581-43c9-b6f7-7673f0ddd1a2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Online Market Multi Variable Regression.py" beforeDir="false" afterPath="$PROJECT_DIR$/Online Market Multi Variable Regression.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/multi regression.py" beforeDir="false" afterPath="$PROJECT_DIR$/multi regression.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,15 +28,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Work/Machine-Learning/ML/Multiple Regression&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Work/Machine-Learning/ML/Naive Bayes"
   }
-}</component>
-  <component name="RunManager" selected="Python.Online Market Multi Variable Regression">
+}]]></component>
+  <component name="RunManager" selected="Python.multi regression">
     <configuration name="Online Market Multi Variable Regression" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Multiple Regression" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -102,8 +102,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Online Market Multi Variable Regression" />
         <item itemvalue="Python.multi regression" />
+        <item itemvalue="Python.Online Market Multi Variable Regression" />
       </list>
     </recent_temporary>
   </component>
