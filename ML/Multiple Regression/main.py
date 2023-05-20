@@ -48,7 +48,11 @@ for i in range(len(all_values)):
 
 print("The number of houses beside the river ", count)
 corr = boston_datasets["PRICE"].corr(boston_datasets["RM"])
-print(corr)
-corr = boston_datasets["PRICE"].corr(boston_datasets["PTRATIO"])
-print(corr)
+# print(corr)
+corre = boston_datasets["PRICE"].corr(boston_datasets["PTRATIO"])
+# print(corr)
+
+# plt.scatter(boston_datasets["DIS"], boston_datasets["NOX"])
+plt.scatter(boston_datasets["PRICE"], boston_datasets["RM"])
+
 plt.show()
