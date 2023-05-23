@@ -4,10 +4,11 @@ from os import walk
 from os.path import join
 import matplotlib.pyplot as plt
 import nltk
+import string
 from nltk.stem import PorterStemmer
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
-
+from bs4 import BeautifulSoup
 import pandas as pd
 
 ex_file = 'SpamData/01_Processing/practice_email.txt'
@@ -38,6 +39,7 @@ json_path = 'SpamData/01_Processing/email-text-data.json'
 
 
 # print(email_body)
+def clean_msg(msg):
 
 def generate_square(n):
     for number in range(n):
@@ -119,5 +121,28 @@ plt.figure(figsize=(8, 6), dpi=100)
 plt.pie(sizes, labels=category_names, textprops={'fontsize': 15}, autopct='%1.2f%%')
 # nltk.download('punkt')
 # nltk.download('stopwords')
-print(len(stopwords.words()))
-plt.show()
+
+# Filtering some Stop words
+# Word Stems and Stemming
+# Removing punctuations
+stop_words = stopwords.words()
+msg = "All work and no play makes Jack a dull boy. To be or not be".translate(str.maketrans('', '', string.punctuation))
+
+words = word_tokenize(msg.lower())
+stemmer = PorterStemmer()
+filtered_words = []
+
+for letter in range(len(words)):
+    if words[letter] not in stop_words:
+        stemmed_word = stemmer.stem(words[letter])
+        filtered_words.append(stemmed_word)
+print(filtered_words)
+
+index = data.at[200, "message"]
+soup = BeautifulSoup(index, 'html.parser')
+# print(soup.prettify())
+print(soup.get_text())
+
+
+# print(index)
+# plt.show()
