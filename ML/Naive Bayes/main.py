@@ -2,6 +2,11 @@
 
 from os import walk
 from os.path import join
+import matplotlib.pyplot as plt
+import nltk
+from nltk.stem import PorterStemmer
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
 
 import pandas as pd
 
@@ -10,6 +15,7 @@ spam_1_path = 'SpamData/01_Processing/spam_assassin_corpus/spam_1'
 spam_2_path = 'SpamData/01_Processing/spam_assassin_corpus/spam_2'
 easy_nonspam_1_path = 'SpamData/01_Processing/spam_assassin_corpus/easy_ham_1'
 easy_nonspam_2_path = 'SpamData/01_Processing/spam_assassin_corpus/easy_ham_2'
+json_path = 'SpamData/01_Processing/email-text-data.json'
 
 
 # Reading the file
@@ -102,4 +108,16 @@ document_ids = range(0, len(data.index))
 data["id"] = document_ids
 data['file_name'] = data.index
 data.set_index('id', inplace=True)
-print(data.head())
+# print(data.head())
+
+spam_num = data["category"].value_counts()[1]
+nonspam_num = data["category"].value_counts()[0]
+# Creating pie chart with spam and non spam email data.
+category_names = ["Spam", "Legit Email"]
+sizes = [spam_num, nonspam_num]
+plt.figure(figsize=(8, 6), dpi=100)
+plt.pie(sizes, labels=category_names, textprops={'fontsize': 15}, autopct='%1.2f%%')
+# nltk.download('punkt')
+# nltk.download('stopwords')
+print(len(stopwords.words()))
+plt.show()
