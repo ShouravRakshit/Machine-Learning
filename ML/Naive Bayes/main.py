@@ -9,6 +9,7 @@ from nltk.stem import PorterStemmer
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from bs4 import BeautifulSoup
+
 import pandas as pd
 
 ex_file = 'SpamData/01_Processing/practice_email.txt'
@@ -18,28 +19,46 @@ easy_nonspam_1_path = 'SpamData/01_Processing/spam_assassin_corpus/easy_ham_1'
 easy_nonspam_2_path = 'SpamData/01_Processing/spam_assassin_corpus/easy_ham_2'
 json_path = 'SpamData/01_Processing/email-text-data.json'
 
-
 # Reading the file
 
-# stream = open(ex_file, "r")
+stream = open(ex_file, "r")
 # is_body = False
 # f = open("demofile.txt", "r")
 
 # email_txt = stream.read()
+is_body = False
 # print(email_txt)
 # print(stream.readlines())
-# lines = []
-# for text in stream:
-#     if is_body:
-#         lines.append(text)
-#     elif text == '\n':
-#         is_body = True
-#
-# email_body = '\n'.join(lines)
+lines = []
+for text in stream:
+    if is_body:
+        lines.append(text)
+    elif text == '\n':
+        is_body = True
+
+email_body = '\n'.join(lines)
+
+print(email_body)
 
 
-# print(email_body)
-def clean_msg(msg):
+def clean_msg(msg, stemmer=PorterStemmer(), stop_words=set(stopwords.words('english'))):
+    # Remove punctuation
+
+    msg = msg.translate(str.maketrans('', '', string.punctuation))
+    # Remove HTML
+    soup = BeautifulSoup(msg, 'html.parser')
+    msg = soup.get_text()
+    # Lowering the words
+    words = word_tokenize(msg.lower())
+    filtered_words = []
+
+    for letter in range(len(words)):
+        if words[letter] not in stop_words:
+            # Removes the stop words.
+            filtered_words.append(stemmer.stem(words[letter]))
+
+    return filtered_words
+
 
 def generate_square(n):
     for number in range(n):
@@ -125,24 +144,26 @@ plt.pie(sizes, labels=category_names, textprops={'fontsize': 15}, autopct='%1.2f
 # Filtering some Stop words
 # Word Stems and Stemming
 # Removing punctuations
-stop_words = stopwords.words()
-msg = "All work and no play makes Jack a dull boy. To be or not be".translate(str.maketrans('', '', string.punctuation))
-
-words = word_tokenize(msg.lower())
-stemmer = PorterStemmer()
-filtered_words = []
-
-for letter in range(len(words)):
-    if words[letter] not in stop_words:
-        stemmed_word = stemmer.stem(words[letter])
-        filtered_words.append(stemmed_word)
-print(filtered_words)
-
-index = data.at[200, "message"]
-soup = BeautifulSoup(index, 'html.parser')
+# stop_words = stopwords.words()
+# msg = "All work and no play makes Jack a dull boy. To be or not be".translate(str.maketrans('', '', string.punctuation))
+#
+# words = word_tokenize(msg.lower())
+# stemmer = PorterStemmer()
+# filtered_words = []
+#
+# for letter in range(len(words)):
+#     if words[letter] not in stop_words:
+#         stemmed_word = stemmer.stem(words[letter])
+#         filtered_words.append(stemmed_word)
+# print(filtered_words)
+#
+# index = data.at[200, "message"]
+# soup = BeautifulSoup(index, 'html.parser')
 # print(soup.prettify())
-print(soup.get_text())
+# print(soup.get_text())
+# print(data["message"].apply(clean_msg(data["message"].iloc[1:5000])))
 
-
+# print(data.message.apply(clean_msg(data["message"].iloc[1:5000])))
+print(clean_msg(data["message"].iloc[1:5]))
 # print(index)
 # plt.show()
