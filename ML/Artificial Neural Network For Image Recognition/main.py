@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 # We can get the data from a website called cs.toronto.edu
 # However, we can get this dataset just by importing it from keras which is lot simpler.
 from keras.datasets import cifar10
-seed(888)
+seed(887)
 random.set_seed(404)
 
 # print(type(cifar10.load_data()))
