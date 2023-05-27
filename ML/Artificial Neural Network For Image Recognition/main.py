@@ -7,7 +7,10 @@ import numpy as np
 from IPython.display import display
 from tensorflow.keras.preprocessing.image import array_to_img
 import matplotlib.pyplot as plt
-
+from  keras.models import Sequential
+from keras.layers import Dense, Activation
+from keras.callbacks import TensorBoard
+from time import strftime
 # Constants
 label_names = ["Plane", "Car", "Bird", "Cat", "Deer", "Dog", "Frog", "Horse", "Ship", "Truck"]
 img_width = 32
@@ -15,6 +18,7 @@ img_height = 32
 img_pixels = img_width * img_height
 total_input = img_height * img_width * 3
 validation = 10000
+log_dir = "tensorboard_cifar_logs/"
 
 # We can get the data from a website called cs.toronto.edu
 # However, we can get this dataset just by importing it from keras which is lot simpler.
@@ -62,11 +66,34 @@ x_train = x_train.reshape(x_train.shape[0], total_input)
 x_test = x_test.reshape(x_test.shape[0], total_input)
 # print(x_test.shape)
 # Now we are going to separate some data for validation purposes.
-x_val = x_train[:10000]
-y_val = y_train[:10000]
+# x_val = x_train[:10000]
+# y_val = y_train[:10000]
 # print(x_val.shape)
 
-x_train = x_train[10000:50000]
-y_train = y_train[10000:50000]
+# x_train = x_train[10000:50000]
+# y_train = y_train[10000:50000]
+x_train_small = x_train[:1000]
+y_train_small = y_train[:1000]
 print(x_train.shape)
+
+model_1 = Sequential([
+    Dense(units=128, input_dim=total_input, activation="relu"),
+    Dense(units=64, activation="relu"),
+    Dense(16, activation="relu"),
+    Dense(10, activation="softmax")
+])
+def get_tensorboard(model_name):
+    model_1.compile(optimizer="adam", loss="sparse_categorical_crossentropy", metrics=["accuracy"])
+    folder_name = f'{model_name} at {strftime("%H %M")}'
+    # print(folder_name)
+    # Created a directory.
+    path = os.path.join(log_dir, folder_name)
+
+    try:
+        os.makedirs(path)
+    except FileExistsError:
+        print("Directory successfully created.")
+
+    return TensorBoard(log_dir=path)
+
 # plt.show()
