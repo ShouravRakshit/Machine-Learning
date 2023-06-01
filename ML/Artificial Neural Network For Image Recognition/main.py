@@ -11,6 +11,7 @@ from  keras.models import Sequential
 from keras.layers import Dense, Activation
 from keras.callbacks import TensorBoard
 from time import strftime
+
 # Constants
 label_names = ["Plane", "Car", "Bird", "Cat", "Deer", "Dog", "Frog", "Horse", "Ship", "Truck"]
 img_width = 32
