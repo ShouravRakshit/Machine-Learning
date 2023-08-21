@@ -21,6 +21,7 @@ total_input = img_height * img_width * 3
 validation = 10000
 log_dir = "tensorboard_cifar_logs/"
 
+
 # We can get the data from a website called cs.toronto.edu
 # However, we can get this dataset just by importing it from keras which is lot simpler.
 from keras.datasets import cifar10
